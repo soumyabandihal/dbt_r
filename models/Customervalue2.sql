@@ -12,7 +12,7 @@ stg_payments2 as (
 select id as payment_id, order_id, payment_method, amount / 100 as amount
 from lab_one.Payments2
 ),
-customer_orders2 as (
+customer_orders as (
 select customer_id, min(order_date) as first_order,
 max(order_date) as most_recent_order,count(order_id) as number_of_orders
 from stg_orders2
